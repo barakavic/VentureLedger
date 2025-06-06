@@ -1,0 +1,13 @@
+# Ignore folders
+/bin/
+/build/
+
+# Ignore compiled files
+*.class
+*.exe
+*.log
+
+# Ignore IDE files
+.vscode/
+*.suo
+*.user
