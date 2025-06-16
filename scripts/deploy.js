@@ -87,7 +87,7 @@ async function main() {
     await crowdfundingProject.connect(investor1).invest(investmentAmount);
     console.log("Investment made.");
 
-    const currentFunds = await crowdfundingProject.currentFunds();
+    const currentFunds = await crowdfundingProject.raisedAmount();
     console.log(`Current project funds: ${ethers.formatUnits(currentFunds, 18)} MUSD`);
     const investorContribution = await crowdfundingProject.investorContributions(investor1.address);
     console.log(`Investor1's contribution: ${ethers.formatUnits(investorContribution, 18)} MUSD`);
