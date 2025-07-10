@@ -1,0 +1,56 @@
+import 'package:flutter/material.dart';
+import 'package:front_end/login_page_logic.dart';
+import 'package:front_end/login_page_ui.dart';
+void main(){
+  runApp(
+    const MyApp()
+  );
+}
+class MyApp extends StatelessWidget{
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      title: 'Login',
+      theme: ThemeData(
+        primarySwatch: Colors.blueGrey,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        inputDecorationTheme: InputDecorationTheme(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10.0),
+
+            
+          ),
+          
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10.0),
+            borderSide: const BorderSide(color: Colors.blueGrey, width: 2.0)
+
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10.0),
+            borderSide: BorderSide(color: Colors.blueGrey.shade200, width: 1.0)
+          ),
+        ),
+
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.blueGrey,
+            foregroundColor: Colors.white,
+            padding: const EdgeInsets.symmetric(vertical: 18.0),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            elevation: 5,
+            textStyle: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+          )
+        )
+
+
+      ),
+      home:  LoginPageUI(),
+    );
+  }
+}

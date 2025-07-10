@@ -1,11 +1,56 @@
 # Ignore folders
 /bin/
 /build/
+/front_end/*
+/front_end/**
 
 # Ignore compiled files
 *.class
 *.exe
 *.log
+.idea/
+*.iml
+*ipr
+*iws
+*.dll
+*.so
+.dart_tool/
+.packages
+build/
+.pub-cache/
+.pub/
+.flutter-plugins
+.flutter-plugins-dependencies
+.flutter-versions
+.melos_tool/
+coverage/
+*.lock
+*.snapshot
+*.swp
+.DS_Store
+*.swo
+*.bak
+*.tmp
+*.orig
+android/.gradle/
+android/app/build/
+android/local/.properties
+android/.idea
+*.keystore
+*.log
+*.tmp
+*.orig
+web/.dart_tool
+web/build/
+windows/build/
+windows/.dart_tool/
+linux/build/
+linux/.dart_tool/
+macos/build/
+macos/.dart_tool/
+
+
+
 
 # Ignore IDE files
 .vscode/
