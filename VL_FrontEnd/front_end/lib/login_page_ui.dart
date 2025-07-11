@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:front_end/AuthScreen.dart';
 
 class LoginPageUI extends StatefulWidget{
-
-  const LoginPageUI({super.key});
+  final VoidCallback onToggleView;
+  const LoginPageUI({super.key, required this.onToggleView});
 
   @override 
-  State<LoginPageUI> createState() => _LoginPageState();
+  State<LoginPageUI> createState() => _LoginPageUIState();
 
 }
-class _LoginPageState extends State<LoginPageUI>{
+class _LoginPageUIState extends State<LoginPageUI>{
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
@@ -25,21 +26,17 @@ class _LoginPageState extends State<LoginPageUI>{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Login Page'),
-        centerTitle: true,
-      ),
-      body: Center(
+    
+      return Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              const Icon(Icons.how_to_reg,
+              const Icon(Icons.login,
               size: 120,
-              color: Colors.deepOrange,
+              color: Colors.teal,
               ),
               
               const SizedBox(
@@ -61,7 +58,7 @@ class _LoginPageState extends State<LoginPageUI>{
               const SizedBox(
                 height: 20,
               ),
-              TextFormField(
+              TextField(
                 controller: _passwordController,
                 obscureText: _obscurePassword,
                 decoration: InputDecoration(
@@ -83,7 +80,7 @@ class _LoginPageState extends State<LoginPageUI>{
               ),
 
               const SizedBox(
-                height: 30,
+                height: 30.0,
               ),
 
               ElevatedButton(onPressed: (){
@@ -110,9 +107,7 @@ class _LoginPageState extends State<LoginPageUI>{
               )),
               const SizedBox(height: 5),
 
-              TextButton(onPressed: (){
-                  return null;
-              },
+              TextButton(onPressed: widget.onToggleView,
                child: const Text(
                 'Not a user? Signup',
                 style: TextStyle(
@@ -123,8 +118,8 @@ class _LoginPageState extends State<LoginPageUI>{
             ],
           ),
 
-        ),
-      ),
-    );
+        )
+      );
+      
   }
 }

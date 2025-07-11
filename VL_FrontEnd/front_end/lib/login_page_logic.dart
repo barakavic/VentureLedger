@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 
 class LoginPage extends StatefulWidget{
-  const LoginPage({super.key});
+  final VoidCallback onToggleView;
+  const LoginPage({super.key, required this.onToggleView});
 
   @override
   State<LoginPage> createState() => _LoginPageState();

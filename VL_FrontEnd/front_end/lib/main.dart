@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:front_end/login_page_logic.dart';
-import 'package:front_end/login_page_ui.dart';
+import 'package:front_end/AuthScreen.dart';
 void main(){
   runApp(
     const MyApp()
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-      title: 'Login',
+      title: 'Login & SignUp',
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -33,11 +32,16 @@ class MyApp extends StatelessWidget{
             borderRadius: BorderRadius.circular(10.0),
             borderSide: BorderSide(color: Colors.blueGrey.shade200, width: 1.0)
           ),
+
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(color: Colors.red, width: 2.0),
+          )
         ),
 
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blueGrey,
+            backgroundColor: Colors.orangeAccent,
             foregroundColor: Colors.white,
             padding: const EdgeInsets.symmetric(vertical: 18.0),
             shape: RoundedRectangleBorder(
@@ -50,7 +54,7 @@ class MyApp extends StatelessWidget{
 
 
       ),
-      home:  LoginPageUI(),
+      home:  const AuthScreen(),
     );
   }
 }
