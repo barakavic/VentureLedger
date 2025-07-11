@@ -20,6 +20,8 @@ class _LoginPageState extends State<LoginPageUI>{
     super.dispose();
   }
 
+  bool _obscurePassword = true;
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -48,22 +50,35 @@ class _LoginPageState extends State<LoginPageUI>{
                 controller: _emailController,
                 keyboardType: TextInputType.emailAddress,
                 decoration: const InputDecoration(
-                  labelText: 'Email',
-                  hintText: 'Enter Your Email',
+                  labelText: 'Email/username',
+                  hintText: 'Enter Email or Username',
                   prefixIcon: Icon(Icons.email),
                 ),
               ),
+              
+              
 
               const SizedBox(
                 height: 20,
               ),
-              TextField(
+              TextFormField(
                 controller: _passwordController,
-                obscureText: true,
-                decoration: const InputDecoration(
+                obscureText: _obscurePassword,
+                decoration: InputDecoration(
                   labelText: 'password',
                   hintText: 'Enter Your Password',
-                  prefixIcon: Icon(Icons.lock),
+                  prefixIcon: const Icon(Icons.lock),
+                  suffixIcon: IconButton(icon: Icon(
+                    _obscurePassword ? Icons.visibility_off : Icons.visibility,
+
+                  ),
+                  onPressed: (){
+                    setState((){
+                      _obscurePassword = !_obscurePassword;
+                    });
+                  },
+                  )
+
                 ),
               ),
 
@@ -88,9 +103,21 @@ class _LoginPageState extends State<LoginPageUI>{
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text('Forgot password tapped')),
                 );
+                
               }, child: const Text(
                 'Forgot Password?',
                 style: TextStyle(color: Colors.deepOrange),
+              )),
+              const SizedBox(height: 5),
+
+              TextButton(onPressed: (){
+                  return null;
+              },
+               child: const Text(
+                'Not a user? Signup',
+                style: TextStyle(
+                  color: Colors.deepOrangeAccent,
+                ),
               ))
 
             ],
