@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:front_end/login_page_logic.dart';
 
 class LoginOptionsPage extends StatelessWidget{
   const LoginOptionsPage({super.key});

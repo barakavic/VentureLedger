@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:front_end/AuthScreen.dart';
 
 class LoginPageUI extends StatefulWidget{
   final VoidCallback onToggleView;

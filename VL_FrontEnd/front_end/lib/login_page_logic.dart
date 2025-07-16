@@ -16,7 +16,7 @@ class _LoginPageState extends State<LoginPage>{
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
 bool _hidePassword = true;
-bool _isLoading = false;
+final bool _isLoading = false;
 
 static const String emailPattern = 
   r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9]+\.[a-zA-Z]+$";
