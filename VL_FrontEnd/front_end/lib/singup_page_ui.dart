@@ -41,7 +41,7 @@ class SignupPageUI  extends StatefulWidget{
       child: SingleChildScrollView(
       padding: const EdgeInsets.all(24.0),
       child: Column(children: <Widget>[
-        const Icon(
+  /*      const Icon(
           Icons.person_add,
           size: 120,
           color: Colors.teal
@@ -56,6 +56,10 @@ class SignupPageUI  extends StatefulWidget{
           fontWeight: FontWeight.bold
         ),
         ),
+*/
+
+        Image.asset('assets/icon/ascent_icon.png',
+            height: 100),
 
         const SizedBox(height: 30.0),
         TextField(
@@ -69,7 +73,7 @@ class SignupPageUI  extends StatefulWidget{
         ),
 
         SizedBox(
-          height: 20.0,
+          height: 10.0,
         ),
 
         

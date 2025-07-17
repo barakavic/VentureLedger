@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:front_end/AuthScreen.dart';
 class LoginOptionsPage extends StatelessWidget{
   const LoginOptionsPage({super.key});
 
@@ -12,8 +13,13 @@ class LoginOptionsPage extends StatelessWidget{
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
+
+          const SizedBox(
+            height: 350.0,
+          ),
+
           Image.asset(
-            'assets/icon/output_no_bg_white.png',
+            'assets/icon/ascent_icon.png',
             height: 100,
           ),
 
@@ -21,26 +27,37 @@ class LoginOptionsPage extends StatelessWidget{
             height: 40,
           ),
 
-          ElevatedButton.icon(onPressed: (){}, 
+          ElevatedButton.icon(onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => AuthScreen()),
+            );
+            
+          }, 
           label: Text("Continue with Email"),
           icon: Icon(Icons.email,),
           style: ElevatedButton.styleFrom(
-            minimumSize: Size(double.infinity, 50)
+            minimumSize: Size(double.infinity, 20),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
           ),
+
           
           ),
 
-          ElevatedButton.icon(onPressed: (){}, 
-          label: Text("Continue With Google"),
+          SizedBox(height: 16),
 
-          icon: Image.asset(
-            'asset/icon/google_icon.png',
-            height: 24
-            ),
+          ElevatedButton.icon(onPressed: (){},
+           
+          label: Text("Continue With Google"),
+        
+
+            icon: Image.asset('assets/icon/google_icon.png', width: 24, height: 24),         
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.white,
               foregroundColor: Colors.black,
-              minimumSize: const Size(double.infinity, 50),
+              minimumSize: const Size(double.infinity, 20),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+              
               side: const BorderSide(color: Colors.grey)
             ),
           ),
@@ -49,19 +66,56 @@ class LoginOptionsPage extends StatelessWidget{
             height: 16,
           ),
 
-          ElevatedButton.icon(onPressed: (){}, 
+          ElevatedButton.icon(onPressed: (){},
+           
           label: const Text("continue with SSO"),
+          icon: Icon(Icons.key),
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.black,
+            
+            backgroundColor: Colors.orangeAccent,
             foregroundColor: Colors.white,
-            minimumSize: const Size(double.infinity, 50),
+            minimumSize: const Size(double.infinity, 20),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           ),
+          ),
+
+          const SizedBox(height: 20),
+
+          Spacer(),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              TextButton(onPressed: (){},
+               child: Text('Privacy Policy',
+               style: TextStyle(color: Colors.blueGrey),)),
+
+               TextButton(onPressed: (){}, 
+               child: Text('Terms and Conditions',
+               style: TextStyle(color: Colors.blueGrey),
+               
+               ))
+            ],
+
+            
           )
 
-        ],
 
+          
+
+
+        ],
+        
+        
+        
+        
       ),
+      
+
+      
       ),
+
+      
     )
     );
   }

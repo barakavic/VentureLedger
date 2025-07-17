@@ -33,10 +33,13 @@ class _LoginPageUIState extends State<LoginPageUI>{
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              const Icon(Icons.login,
+            /*  const Icon(Icons.login,
               size: 120,
               color: Colors.teal,
               ),
+              */
+              Image.asset('assets/icon/ascent_icon.png',
+            height: 100,),
               
               const SizedBox(
                 height: 20.0,

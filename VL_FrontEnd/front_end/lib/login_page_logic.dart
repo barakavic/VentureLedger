@@ -59,6 +59,8 @@ final RegExp emailRegex = RegExp(emailPattern);
     }
     return null;
   }
+
+  
   
   @override
   Widget build(BuildContext context) {

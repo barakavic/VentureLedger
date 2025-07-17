@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:front_end/AuthScreen.dart';
-void main(){
+// import 'package:front_end/AuthScreen.dart';
+import 'package:front_end/login_options_page.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+const supabaseUrl = 'https://fchaxglq1scawnbayqk.supabase.co';
+const supabaseKey = String.fromEnvironment('SUPABASE_KEY');
+Future <void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Supabase.initialize(
+    url: supabaseUrl,
+    anonKey: supabaseKey
+  );
   runApp(
     const MyApp()
   );
@@ -54,7 +65,7 @@ class MyApp extends StatelessWidget{
 
 
       ),
-      home:  const AuthScreen(),
+      home:  const LoginOptionsPage(),
     );
   }
 }
