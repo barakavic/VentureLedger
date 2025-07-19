@@ -74,7 +74,7 @@ flutter:
     - assets/icon/Ascent_logo.png
     - assets/icon/ascent_icon.png
     - assets/icon/google_icon.png
-    - assets/icon/output_no_bg_white.png
+    - assets/icon/ascent_icon_white.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

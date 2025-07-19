@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:front_end/AuthScreen.dart';
+import 'package:front_end/homepage.dart';
 class LoginOptionsPage extends StatelessWidget{
   const LoginOptionsPage({super.key});
 
@@ -66,9 +67,12 @@ class LoginOptionsPage extends StatelessWidget{
             height: 16,
           ),
 
-          ElevatedButton.icon(onPressed: (){},
+          ElevatedButton.icon(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> AscentHomepage(),));
+
+          },
            
-          label: const Text("continue with SSO"),
+          label: const Text("Continue with SSO"),
           icon: Icon(Icons.key),
           style: ElevatedButton.styleFrom(
             

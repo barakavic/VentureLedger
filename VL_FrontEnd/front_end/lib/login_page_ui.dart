@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:front_end/homepage.dart';
+import 'package:front_end/singup_page_ui.dart';
 
 class LoginPageUI extends StatefulWidget{
   final VoidCallback onToggleView;
@@ -86,6 +88,12 @@ class _LoginPageUIState extends State<LoginPageUI>{
               ),
 
               ElevatedButton(onPressed: (){
+                Navigator.push(context, 
+                MaterialPageRoute(builder: (context) => AscentHomepage()),
+                );
+                
+
+
                 print('login button tapped');
                 print('Email: ${_emailController.text}');
                 print('Password: ${_passwordController.text}');
@@ -100,7 +108,7 @@ class _LoginPageUIState extends State<LoginPageUI>{
               TextButton(onPressed: (){
                 print('Forgot Password Pressed');
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Forgot password tapped')),
+                  const SnackBar(content: Text('')),
                 );
                 
               }, child: const Text(
