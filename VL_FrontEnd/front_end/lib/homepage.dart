@@ -12,53 +12,10 @@ class _AscentHomepageUIState extends State<AscentHomepage>{
   final TextEditingController _searchController = TextEditingController();
   int _selectedIndex = 0;
 
-  static const List<Widget> _widgetOptions = <Widget>[
-    Center(child: Text('Home Content'), 
-    ),
-    Center(child: Text('Markets Content'),
-
-    ),
-    Center(child: Text('Teams Content'), 
-
-    ),
-
-    Center(child: Text('Wallet Content'), 
-    ),
-  ];
-
-  void _onItemtapped(int index){
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-  
-    // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        leading:  Image.asset('assets/icon/ascent_icon.png', height: 50,),
-        backgroundColor: Colors.white ,
-
-      
+  static final List<Widget> _widgetOptions = <Widget>[
 
 
-
-        actions: <Widget>[
-          IconButton(onPressed: (){}, icon: Icon(Icons.search)),
-          IconButton(onPressed: (){}, icon: Icon(Icons.person,))
-        ],
-
-        
-
-      
-
-        
-        ), 
-
-
-        body: SingleChildScrollView(
+    SingleChildScrollView(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -263,6 +220,53 @@ class _AscentHomepageUIState extends State<AscentHomepage>{
             
           ),
         ),
+
+    
+ 
+    Center(child: Text('Markets Content'),
+
+    ),
+    Center(child: Text('Teams Content'), 
+
+    ),
+
+    Center(child: Text('Wallet Content'), 
+    ),
+  ];
+
+  void _onItemtapped(int index){
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+  
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        leading:  Image.asset('assets/icon/ascent_icon.png', height: 50,),
+        backgroundColor: Colors.white ,
+
+      
+
+
+
+        actions: <Widget>[
+          IconButton(onPressed: (){}, icon: Icon(Icons.search)),
+          IconButton(onPressed: (){}, icon: Icon(Icons.person,))
+        ],
+
+        
+
+      
+
+        
+        ), 
+
+
+        body: _widgetOptions.elementAt(_selectedIndex),
 
         bottomNavigationBar: BottomNavigationBar(
           items: const<BottomNavigationBarItem>[
