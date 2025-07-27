@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:front_end/markets_screen.dart';
 
 
 class AscentHomepage extends StatefulWidget{
@@ -223,9 +224,9 @@ class _AscentHomepageUIState extends State<AscentHomepage>{
 
     
  
-    Center(child: Text('Markets Content'),
+    MarketsScreen(),
 
-    ),
+    
     Center(child: Text('Teams Content'), 
 
     ),

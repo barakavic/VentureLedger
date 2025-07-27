@@ -11,6 +11,5 @@ contract MockERC20 is ERC20{
 
     function mint(address to , uint256 amount)public {
         _mint(to,amount);
-        
     }
 }
